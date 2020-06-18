@@ -1,0 +1,9 @@
+<form action="/cocktails/<%= @cocktail.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input type="text" ...>
+</form>
+
+<form method="post" action="/cocktails/<%= @cocktail.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
