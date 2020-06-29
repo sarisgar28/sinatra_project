@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
     post '/login' do 
          @u = User.find_by(username: params[:username])
-        if !!@u && @u.authenticate(params[:password])
+        if @u = User.first && @u.authenticate(params[:passwrod])
             session[:user_id] = @u.id
             redirect'/dashboard'
         else  

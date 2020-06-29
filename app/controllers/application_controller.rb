@@ -7,11 +7,18 @@ class ApplicationController < Sinatra::Base
     get '/' do 
         erb :home
     end
-
+   
+    get '/sessions/Login' do 
+        "Welcome Cocktail Lover"
+    end 
+    get '/Signup' do 
+        "Please Sign Up!"
+    end 
+    
     helpers do 
 
         def current_user
-            @user ||= User.find_by(id: session[:user_id])
+            @u ||= User.find_by(id: session[:user_id])
         end 
 
         def logged_in?
@@ -19,7 +26,7 @@ class ApplicationController < Sinatra::Base
         end 
         
         def authenticate
-            redirect '/Login' if !logged_in?
+            redirect 'sessions/Login' if !logged_in?
         end
     
     
