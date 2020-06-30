@@ -1,0 +1,12 @@
+<h3>Welcome <%= @u.username%></h3>
+
+ <% if @u.cocktails%>
+    <h4>Cocktail's List:</h4>
+    <p><%= @u.cocktails.to_s%>
+
+  <%else%>
+       <form action= "/get_cocktail" method="post"></form>
+       <input type= "hidden" value= "patch" name= "_method">
+       <input type= "submit" value= "COCKTAILS!">
+       </form>
+<%end%> 

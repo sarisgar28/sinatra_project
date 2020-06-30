@@ -14,15 +14,19 @@ class ApplicationController < Sinatra::Base
     get '/Signup' do 
         "Please Sign Up!"
     end 
+
+    post '/sessions/login' do 
+        "Cocktail Description!"
+    end 
     
     helpers do 
 
-        def current_user
+        def user 
             @u ||= User.find_by(id: session[:user_id])
         end 
 
         def logged_in?
-            !!current_user
+            !!@u
         end 
         
         def authenticate
