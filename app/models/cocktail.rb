@@ -12,7 +12,7 @@ class Cocktail < ActiveRecord::Base
     end 
 
    def to_s
-    "c{cocktail.name.capitalize}"
+    "{cocktail.name.capitalize}"
    end 
 
    

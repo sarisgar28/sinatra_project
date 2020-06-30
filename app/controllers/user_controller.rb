@@ -5,7 +5,7 @@ class UserController < ApplicationController
         erb :'/dashboard'
     end
 
-    patch '/get_cocktails' do 
+    post'/get_cocktails' do 
         authenticate
        if @u.cocktail
             redirect '/dashboard'

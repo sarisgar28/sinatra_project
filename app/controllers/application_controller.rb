@@ -8,8 +8,9 @@ class ApplicationController < Sinatra::Base
         erb :home
     end
    
-    get '/sessions/Login' do 
+    get '/Login' do 
         "Welcome Cocktail Lover"
+        redirect '/dashboard'
     end 
     get '/Signup' do 
         "Please Sign Up!"
