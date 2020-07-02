@@ -1,7 +1,7 @@
 <h3>Sign Up<h3>
 
-<% if @u && @u.errors.any? %>
-    <%@u.errors.full_messages.each do |m|%>
+<% if current_user && current_user.errors.any? %>
+    <%current_user.errors.full_messages.each do |m|%>
 <p class="danger"><%= m%></p>
     <%end%>
 <%end%>
@@ -11,4 +11,4 @@
     <input type="submit" value="Sign Up">
 </form>
 
-<a href="/sessions/Login">Log In</a>
+<a href="/Login">Log In</a>

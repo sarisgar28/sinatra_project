@@ -9,24 +9,28 @@ class SessionsController < ApplicationController
     end 
     
     post '/signup' do
-        @u = User.new(username: params[:username], password: params[:password])
-        if @u.save 
-            session[:user_id] = @u.id 
-            redirect'/dashboard'
+        @user = User.new(username: params[:username], password: params[:password])
+        if @user.save 
+            session[:user_id] = @user.id 
+            redirect'/cocktails'
         else
          erb :"sessions/signup"
         end
     end 
 
     post '/login' do 
-         @u = User.find_by(username: params[:username])
-        if @u = User.first(params[:passwrod])
-            session[:user_id] = @u.id
-            redirect'/dashboard'
+         user = User.find_by(username: params[:username])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect'/cocktails'
         else  
             @error = "Invalid Username or Password"
             erb :"sessions/login"
         
         end 
+    end 
+
+    delete '/logout' do 
+        session.clear
     end 
 end 

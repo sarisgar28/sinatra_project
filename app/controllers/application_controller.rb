@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base 
 
     set :views, ->{File.join(root,'../views')}
-    enable :session
+    enable :sessions
     set :session_secret, ENV["SESSION_SECRET"]
 
     get '/' do 
@@ -9,25 +9,20 @@ class ApplicationController < Sinatra::Base
     end
    
     get '/Login' do 
-        "Welcome Cocktail Lover"
-        redirect '/dashboard'
+        redirect '/login'
     end 
     get '/Signup' do 
-        "Please Sign Up!"
+        redirect '/signup'
     end 
 
-    post '/sessions/login' do 
-        "Cocktail Description!"
-    end 
-    
     helpers do 
 
-        def user 
-            @u ||= User.find_by(id: session[:user_id])
+        def current_user 
+         User.find_by(id: session[:user_id])
         end 
 
         def logged_in?
-            !!@u
+            !!current_user
         end 
         
         def authenticate

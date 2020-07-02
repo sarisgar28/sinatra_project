@@ -1,0 +1,8 @@
+<h3> GET READY FOR A GREAT EXPERIENCE!</h3>
+<a href= "/cocktails/new">Create New Cocktail</a><br>
+
+ <%  @cocktails.each do |cocktail|%>
+  <a href= "/cocktails/<%=cocktail.id%>"> <%= cocktail.name%> </a>  <br>
+<%end%> 
+
+
