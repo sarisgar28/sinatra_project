@@ -5,4 +5,12 @@
   <a href= "/cocktails/<%=cocktail.id%>"> <%= cocktail.name%> </a>  <br>
 <%end%> 
 
+<h3>Log Out<h3>
+<form method="delete" action="/logout">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
+
+
+
 
