@@ -14,6 +14,9 @@ class ApplicationController < Sinatra::Base
     get '/Signup' do 
         redirect '/signup'
     end 
+    get '/delete' do 
+        erb :home
+    end 
 
     helpers do 
 
@@ -29,10 +32,9 @@ class ApplicationController < Sinatra::Base
             redirect 'sessions/Login' if !logged_in?
         end
     
+        
     end 
-    get '/delete' do 
-        erb :home
-    end 
+   
 
 
 
