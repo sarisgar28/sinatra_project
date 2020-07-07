@@ -1,9 +1,9 @@
 <form action="/cocktails/<%= @cocktail.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type= "text" name="name" value=<%=@cocktail.name%>>
-    <input type= "text" name="ingredients" value=<%=@cocktail.ingredients%>>
-    <input type= "text" name="private_note" value=<%=@cocktail.private_note%>>
-    <input type= "submit" value="Edit Cocktail">
+    <input type= "text" name="name" value="<%=@cocktail.name%>">
+    <input type= "text_area" name="ingredients" value="<%=@cocktail.ingredients%>">
+    <input type= "text_area" name="private_note" value="<%=@cocktail.private_note%>">
+    <input type= "submit" value="Edit">
   </form>
 
 <form method="post" action="/cocktails/<%= @cocktail.id %>">

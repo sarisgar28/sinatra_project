@@ -6,8 +6,9 @@ get '/cocktails/new' do
 #read
 
     get '/cocktails' do 
-       @cocktails = Cocktail.all 
-       erb :'/cocktails/dashboard'
+        authenticate
+        @cocktails = current_user.cocktails.all 
+        erb :'/cocktails/dashboard'
    end 
 
    post '/cocktails' do 

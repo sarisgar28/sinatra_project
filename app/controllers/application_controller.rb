@@ -8,16 +8,7 @@ class ApplicationController < Sinatra::Base
         erb :home
     end
    
-    get '/Login' do 
-        redirect '/login'
-    end 
-    get '/Signup' do 
-        redirect '/signup'
-    end 
-    get '/delete' do 
-        erb :home
-    end 
-
+  
     helpers do 
 
         def current_user 
@@ -29,7 +20,7 @@ class ApplicationController < Sinatra::Base
         end 
         
         def authenticate
-            redirect 'sessions/Login' if !logged_in?
+            redirect '/login' if !logged_in?
         end
     
         

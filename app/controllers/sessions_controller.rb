@@ -32,6 +32,6 @@ class SessionsController < ApplicationController
 
     delete '/logout' do 
          session.clear
-         redirect '/home'
+         redirect '/'
      end 
 end 
